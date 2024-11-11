@@ -11,9 +11,15 @@ class Principal extends React.Component {
   render() {
     return (
       <View>
-        <Button title="Página 01" onPress={() => this.goToPagina01()} />
-        <Button title="Página 02" onPress={() => this.goToPagina02()} />
-        <Button title="Homem-Aranha no Aranhaverso" onPress={() => this.goToPagina03()} />
+        <View style={{ marginBottom: 10 }}>
+          <Button title="Página 01" onPress={() => this.goToPagina01()} />
+        </View>
+        <View style={{ marginBottom: 10 }}>
+          <Button title="Página 02" onPress={() => this.goToPagina02()} />
+        </View>
+        <View>
+          <Button title="Homem-Aranha no Aranhaverso" onPress={() => this.goToPagina03()} />
+        </View>
       </View>
     );
   }
