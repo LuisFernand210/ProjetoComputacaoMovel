@@ -1,7 +1,8 @@
 import React from 'react';
-import { Text, View, Button, Image } from 'react-native';
+import { Text, View, Button, Image, Picker, TextInput } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 import Tobey1 from './assets/Tobey1.png'
 import Tobey2 from './assets/Tobey2.png'
@@ -65,102 +66,612 @@ class Principal extends React.Component {
   goToPagina09() {this.props.navigation.navigate("Homem-Aranha no Aranhaverso");}
   goToPagina10() {this.props.navigation.navigate("Homem-Aranha: Através do Aranhaverso");}
 }
+
 class Pagina01 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      status: 'não assisti',
+      rating: '',
+    };
+  }
+
+  async componentDidMount() {
+    try {
+      const savedStatus = await AsyncStorage.getItem('status_Pagina01');
+      const savedRating = await AsyncStorage.getItem('rating_Pagina01');
+      if (savedStatus !== null) this.setState({ status: savedStatus });
+      if (savedRating !== null) this.setState({ rating: savedRating });
+    } catch (error) {
+      console.log('Erro ao carregar dados:', error);
+    }
+  }
+
+  saveData = async () => {
+    try {
+      await AsyncStorage.setItem('status_Pagina01', this.state.status);
+      await AsyncStorage.setItem('rating_Pagina01', this.state.rating);
+      alert('Dados salvos!');
+    } catch (error) {
+      console.log('Erro ao salvar dados:', error);
+    }
+  };
+
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>{"Página 01!!!"}</Text>
-        <Image source={Tobey1} style={{ width: 200, height: 250 }}/>
+        <Image source={Tobey1} style={{ width: 200, height: 250 }} />
+
+        <Text>Status:</Text>
+        <Picker
+          selectedValue={this.state.status}
+          style={{ height: 50, width: 200 }}
+          onValueChange={(itemValue) => this.setState({ status: itemValue })}
+        >
+          <Picker.Item label="Não assisti" value="não assisti" />
+          <Picker.Item label="Quero assistir" value="quero assistir" />
+          <Picker.Item label="Assisti" value="assisti" />
+        </Picker>
+
+        <Text>Nota (1 a 10):</Text>
+        <TextInput
+          style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: 50, textAlign: 'center' }}
+          keyboardType="numeric"
+          value={this.state.rating}
+          onChangeText={(text) => this.setState({ rating: text })}
+          maxLength={2}
+        />
+
+        <Button title="Salvar" onPress={this.saveData} />
       </View>
     );
   }
 }
+
 class Pagina02 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      status: 'não assisti',
+      rating: '',
+    };
+  }
+
+  async componentDidMount() {
+    try {
+      const savedStatus = await AsyncStorage.getItem('status_Pagina02');
+      const savedRating = await AsyncStorage.getItem('rating_Pagina02');
+      if (savedStatus !== null) this.setState({ status: savedStatus });
+      if (savedRating !== null) this.setState({ rating: savedRating });
+    } catch (error) {
+      console.log('Erro ao carregar dados:', error);
+    }
+  }
+
+  saveData = async () => {
+    try {
+      await AsyncStorage.setItem('status_Pagina02', this.state.status);
+      await AsyncStorage.setItem('rating_Pagina02', this.state.rating);
+      alert('Dados salvos!');
+    } catch (error) {
+      console.log('Erro ao salvar dados:', error);
+    }
+  };
+
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>{"Página 02!!!"}</Text>
-        <Image source={Tobey2} style={{ width: 200, height: 250 }}/>
+        <Image source={Tobey2} style={{ width: 200, height: 250 }} />
+
+        <Text>Status:</Text>
+        <Picker
+          selectedValue={this.state.status}
+          style={{ height: 50, width: 200 }}
+          onValueChange={(itemValue) => this.setState({ status: itemValue })}
+        >
+          <Picker.Item label="Não assisti" value="não assisti" />
+          <Picker.Item label="Quero assistir" value="quero assistir" />
+          <Picker.Item label="Assisti" value="assisti" />
+        </Picker>
+
+        <Text>Nota (1 a 10):</Text>
+        <TextInput
+          style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: 50, textAlign: 'center' }}
+          keyboardType="numeric"
+          value={this.state.rating}
+          onChangeText={(text) => this.setState({ rating: text })}
+          maxLength={2}
+        />
+
+        <Button title="Salvar" onPress={this.saveData} />
       </View>
     );
   }
 }
+
 class Pagina03 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      status: 'não assisti',
+      rating: '',
+    };
+  }
+
+  async componentDidMount() {
+    try {
+      const savedStatus = await AsyncStorage.getItem('status_Pagina03');
+      const savedRating = await AsyncStorage.getItem('rating_Pagina03');
+      if (savedStatus !== null) this.setState({ status: savedStatus });
+      if (savedRating !== null) this.setState({ rating: savedRating });
+    } catch (error) {
+      console.log('Erro ao carregar dados:', error);
+    }
+  }
+
+  saveData = async () => {
+    try {
+      await AsyncStorage.setItem('status_Pagina03', this.state.status);
+      await AsyncStorage.setItem('rating_Pagina03', this.state.rating);
+      alert('Dados salvos!');
+    } catch (error) {
+      console.log('Erro ao salvar dados:', error);
+    }
+  };
+
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>{"Página 03!!!"}</Text>
-        <Image source={Tobey3} style={{ width: 200, height: 250 }}/>
+        <Image source={Tobey3} style={{ width: 200, height: 250 }} />
+
+        <Text>Status:</Text>
+        <Picker
+          selectedValue={this.state.status}
+          style={{ height: 50, width: 200 }}
+          onValueChange={(itemValue) => this.setState({ status: itemValue })}
+        >
+          <Picker.Item label="Não assisti" value="não assisti" />
+          <Picker.Item label="Quero assistir" value="quero assistir" />
+          <Picker.Item label="Assisti" value="assisti" />
+        </Picker>
+
+        <Text>Nota (1 a 10):</Text>
+        <TextInput
+          style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: 50, textAlign: 'center' }}
+          keyboardType="numeric"
+          value={this.state.rating}
+          onChangeText={(text) => this.setState({ rating: text })}
+          maxLength={2}
+        />
+
+        <Button title="Salvar" onPress={this.saveData} />
       </View>
     );
   }
 }
+
 class Pagina04 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      status: 'não assisti',
+      rating: '',
+    };
+  }
+
+  async componentDidMount() {
+    try {
+      const savedStatus = await AsyncStorage.getItem('status_Pagina04');
+      const savedRating = await AsyncStorage.getItem('rating_Pagina04');
+      if (savedStatus !== null) this.setState({ status: savedStatus });
+      if (savedRating !== null) this.setState({ rating: savedRating });
+    } catch (error) {
+      console.log('Erro ao carregar dados:', error);
+    }
+  }
+
+  saveData = async () => {
+    try {
+      await AsyncStorage.setItem('status_Pagina04', this.state.status);
+      await AsyncStorage.setItem('rating_Pagina04', this.state.rating);
+      alert('Dados salvos!');
+    } catch (error) {
+      console.log('Erro ao salvar dados:', error);
+    }
+  };
+
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>{"Página 04!!!"}</Text>
-        <Image source={Andrew1} style={{ width: 200, height: 250 }}/>
+        <Image source={Andrew1} style={{ width: 200, height: 250 }} />
+
+        <Text>Status:</Text>
+        <Picker
+          selectedValue={this.state.status}
+          style={{ height: 50, width: 200 }}
+          onValueChange={(itemValue) => this.setState({ status: itemValue })}
+        >
+          <Picker.Item label="Não assisti" value="não assisti" />
+          <Picker.Item label="Quero assistir" value="quero assistir" />
+          <Picker.Item label="Assisti" value="assisti" />
+        </Picker>
+
+        <Text>Nota (1 a 10):</Text>
+        <TextInput
+          style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: 50, textAlign: 'center' }}
+          keyboardType="numeric"
+          value={this.state.rating}
+          onChangeText={(text) => this.setState({ rating: text })}
+          maxLength={2}
+        />
+
+        <Button title="Salvar" onPress={this.saveData} />
       </View>
     );
   }
 }
+
 class Pagina05 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      status: 'não assisti',
+      rating: '',
+    };
+  }
+
+  async componentDidMount() {
+    try {
+      const savedStatus = await AsyncStorage.getItem('status_Pagina05');
+      const savedRating = await AsyncStorage.getItem('rating_Pagina05');
+      if (savedStatus !== null) this.setState({ status: savedStatus });
+      if (savedRating !== null) this.setState({ rating: savedRating });
+    } catch (error) {
+      console.log('Erro ao carregar dados:', error);
+    }
+  }
+
+  saveData = async () => {
+    try {
+      await AsyncStorage.setItem('status_Pagina05', this.state.status);
+      await AsyncStorage.setItem('rating_Pagina05', this.state.rating);
+      alert('Dados salvos!');
+    } catch (error) {
+      console.log('Erro ao salvar dados:', error);
+    }
+  };
+
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>{"Página 05!!!"}</Text>
-        <Image source={Andrew2} style={{ width: 200, height: 250 }}/>
+        <Image source={Andrew2} style={{ width: 200, height: 250 }} />
+
+        <Text>Status:</Text>
+        <Picker
+          selectedValue={this.state.status}
+          style={{ height: 50, width: 200 }}
+          onValueChange={(itemValue) => this.setState({ status: itemValue })}
+        >
+          <Picker.Item label="Não assisti" value="não assisti" />
+          <Picker.Item label="Quero assistir" value="quero assistir" />
+          <Picker.Item label="Assisti" value="assisti" />
+        </Picker>
+
+        <Text>Nota (1 a 10):</Text>
+        <TextInput
+          style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: 50, textAlign: 'center' }}
+          keyboardType="numeric"
+          value={this.state.rating}
+          onChangeText={(text) => this.setState({ rating: text })}
+          maxLength={2}
+        />
+
+        <Button title="Salvar" onPress={this.saveData} />
       </View>
     );
   }
 }
+
 class Pagina06 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      status: 'não assisti',
+      rating: '',
+    };
+  }
+
+  async componentDidMount() {
+    try {
+      const savedStatus = await AsyncStorage.getItem('status_Pagina06');
+      const savedRating = await AsyncStorage.getItem('rating_Pagina06');
+      if (savedStatus !== null) this.setState({ status: savedStatus });
+      if (savedRating !== null) this.setState({ rating: savedRating });
+    } catch (error) {
+      console.log('Erro ao carregar dados:', error);
+    }
+  }
+
+  saveData = async () => {
+    try {
+      await AsyncStorage.setItem('status_Pagina06', this.state.status);
+      await AsyncStorage.setItem('rating_Pagina06', this.state.rating);
+      alert('Dados salvos!');
+    } catch (error) {
+      console.log('Erro ao salvar dados:', error);
+    }
+  };
+
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>{"Página 06!!!"}</Text>
-        <Image source={Tom1} style={{ width: 200, height: 250 }}/>
+        <Image source={Tom1} style={{ width: 200, height: 250 }} />
+
+        <Text>Status:</Text>
+        <Picker
+          selectedValue={this.state.status}
+          style={{ height: 50, width: 200 }}
+          onValueChange={(itemValue) => this.setState({ status: itemValue })}
+        >
+          <Picker.Item label="Não assisti" value="não assisti" />
+          <Picker.Item label="Quero assistir" value="quero assistir" />
+          <Picker.Item label="Assisti" value="assisti" />
+        </Picker>
+
+        <Text>Nota (1 a 10):</Text>
+        <TextInput
+          style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: 50, textAlign: 'center' }}
+          keyboardType="numeric"
+          value={this.state.rating}
+          onChangeText={(text) => this.setState({ rating: text })}
+          maxLength={2}
+        />
+
+        <Button title="Salvar" onPress={this.saveData} />
       </View>
     );
   }
 }
+
 class Pagina07 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      status: 'não assisti',
+      rating: '',
+    };
+  }
+
+  async componentDidMount() {
+    try {
+      const savedStatus = await AsyncStorage.getItem('status_Pagina07');
+      const savedRating = await AsyncStorage.getItem('rating_Pagina07');
+      if (savedStatus !== null) this.setState({ status: savedStatus });
+      if (savedRating !== null) this.setState({ rating: savedRating });
+    } catch (error) {
+      console.log('Erro ao carregar dados:', error);
+    }
+  }
+
+  saveData = async () => {
+    try {
+      await AsyncStorage.setItem('status_Pagina07', this.state.status);
+      await AsyncStorage.setItem('rating_Pagina07', this.state.rating);
+      alert('Dados salvos!');
+    } catch (error) {
+      console.log('Erro ao salvar dados:', error);
+    }
+  };
+
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>{"Página 07!!!"}</Text>
-        <Image source={Tom2} style={{ width: 200, height: 250 }}/>
+        <Image source={Tom2} style={{ width: 200, height: 250 }} />
+
+        <Text>Status:</Text>
+        <Picker
+          selectedValue={this.state.status}
+          style={{ height: 50, width: 200 }}
+          onValueChange={(itemValue) => this.setState({ status: itemValue })}
+        >
+          <Picker.Item label="Não assisti" value="não assisti" />
+          <Picker.Item label="Quero assistir" value="quero assistir" />
+          <Picker.Item label="Assisti" value="assisti" />
+        </Picker>
+
+        <Text>Nota (1 a 10):</Text>
+        <TextInput
+          style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: 50, textAlign: 'center' }}
+          keyboardType="numeric"
+          value={this.state.rating}
+          onChangeText={(text) => this.setState({ rating: text })}
+          maxLength={2}
+        />
+
+        <Button title="Salvar" onPress={this.saveData} />
       </View>
     );
   }
 }
+
 class Pagina08 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      status: 'não assisti',
+      rating: '',
+    };
+  }
+
+  async componentDidMount() {
+    try {
+      const savedStatus = await AsyncStorage.getItem('status_Pagina08');
+      const savedRating = await AsyncStorage.getItem('rating_Pagina08');
+      if (savedStatus !== null) this.setState({ status: savedStatus });
+      if (savedRating !== null) this.setState({ rating: savedRating });
+    } catch (error) {
+      console.log('Erro ao carregar dados:', error);
+    }
+  }
+
+  saveData = async () => {
+    try {
+      await AsyncStorage.setItem('status_Pagina08', this.state.status);
+      await AsyncStorage.setItem('rating_Pagina08', this.state.rating);
+      alert('Dados salvos!');
+    } catch (error) {
+      console.log('Erro ao salvar dados:', error);
+    }
+  };
+
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>{"Página 08!!!"}</Text>
-        <Image source={Tom3} style={{ width: 200, height: 250 }}/>
+        <Image source={Tom3} style={{ width: 200, height: 250 }} />
+
+        <Text>Status:</Text>
+        <Picker
+          selectedValue={this.state.status}
+          style={{ height: 50, width: 200 }}
+          onValueChange={(itemValue) => this.setState({ status: itemValue })}
+        >
+          <Picker.Item label="Não assisti" value="não assisti" />
+          <Picker.Item label="Quero assistir" value="quero assistir" />
+          <Picker.Item label="Assisti" value="assisti" />
+        </Picker>
+
+        <Text>Nota (1 a 10):</Text>
+        <TextInput
+          style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: 50, textAlign: 'center' }}
+          keyboardType="numeric"
+          value={this.state.rating}
+          onChangeText={(text) => this.setState({ rating: text })}
+          maxLength={2}
+        />
+
+        <Button title="Salvar" onPress={this.saveData} />
       </View>
     );
   }
 }
+
 class Pagina09 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      status: 'não assisti',
+      rating: '',
+    };
+  }
+
+  async componentDidMount() {
+    try {
+      const savedStatus = await AsyncStorage.getItem('status_Pagina09');
+      const savedRating = await AsyncStorage.getItem('rating_Pagina09');
+      if (savedStatus !== null) this.setState({ status: savedStatus });
+      if (savedRating !== null) this.setState({ rating: savedRating });
+    } catch (error) {
+      console.log('Erro ao carregar dados:', error);
+    }
+  }
+
+  saveData = async () => {
+    try {
+      await AsyncStorage.setItem('status_Pagina09', this.state.status);
+      await AsyncStorage.setItem('rating_Pagina09', this.state.rating);
+      alert('Dados salvos!');
+    } catch (error) {
+      console.log('Erro ao salvar dados:', error);
+    }
+  };
+
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>{"Página 09!!!"}</Text>
-        <Image source={IntoSpiderverse} style={{ width: 200, height: 250 }}/>
+        <Image source={IntoSpiderverse} style={{ width: 200, height: 250 }} />
+
+        <Text>Status:</Text>
+        <Picker
+          selectedValue={this.state.status}
+          style={{ height: 50, width: 200 }}
+          onValueChange={(itemValue) => this.setState({ status: itemValue })}
+        >
+          <Picker.Item label="Não assisti" value="não assisti" />
+          <Picker.Item label="Quero assistir" value="quero assistir" />
+          <Picker.Item label="Assisti" value="assisti" />
+        </Picker>
+
+        <Text>Nota (1 a 10):</Text>
+        <TextInput
+          style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: 50, textAlign: 'center' }}
+          keyboardType="numeric"
+          value={this.state.rating}
+          onChangeText={(text) => this.setState({ rating: text })}
+          maxLength={2}
+        />
+
+        <Button title="Salvar" onPress={this.saveData} />
       </View>
     );
   }
 }
+
 class Pagina10 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      status: 'não assisti',
+      rating: '',
+    };
+  }
+
+  async componentDidMount() {
+    try {
+      const savedStatus = await AsyncStorage.getItem('status_Pagina10');
+      const savedRating = await AsyncStorage.getItem('rating_Pagina10');
+      if (savedStatus !== null) this.setState({ status: savedStatus });
+      if (savedRating !== null) this.setState({ rating: savedRating });
+    } catch (error) {
+      console.log('Erro ao carregar dados:', error);
+    }
+  }
+
+  saveData = async () => {
+    try {
+      await AsyncStorage.setItem('status_Pagina10', this.state.status);
+      await AsyncStorage.setItem('rating_Pagina10', this.state.rating);
+      alert('Dados salvos!');
+    } catch (error) {
+      console.log('Erro ao salvar dados:', error);
+    }
+  };
+
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>{"Página 10!!!"}</Text>
-        <Image source={AcrossSpiderverse} style={{ width: 200, height: 250 }}/>
+        <Image source={AcrossSpiderverse} style={{ width: 200, height: 250 }} />
+
+        <Text>Status:</Text>
+        <Picker
+          selectedValue={this.state.status}
+          style={{ height: 50, width: 200 }}
+          onValueChange={(itemValue) => this.setState({ status: itemValue })}
+        >
+          <Picker.Item label="Não assisti" value="não assisti" />
+          <Picker.Item label="Quero assistir" value="quero assistir" />
+          <Picker.Item label="Assisti" value="assisti" />
+        </Picker>
+
+        <Text>Nota (1 a 10):</Text>
+        <TextInput
+          style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: 50, textAlign: 'center' }}
+          keyboardType="numeric"
+          value={this.state.rating}
+          onChangeText={(text) => this.setState({ rating: text })}
+          maxLength={2}
+        />
+
+        <Button title="Salvar" onPress={this.saveData} />
       </View>
     );
   }
