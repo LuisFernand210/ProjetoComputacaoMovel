@@ -102,7 +102,7 @@ class Pagina01 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Image source={Tobey1} style={{ width: 200, height: 250 }} />
+        <Image source={Tobey1} style={{ width: 300, height: 375 }} />
 
         <Text>Status:</Text>
         <Picker
@@ -164,7 +164,7 @@ class Pagina02 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Image source={Tobey2} style={{ width: 200, height: 250 }} />
+        <Image source={Tobey2} style={{ width: 300, height: 375 }} />
 
         <Text>Status:</Text>
         <Picker
@@ -226,7 +226,7 @@ class Pagina03 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Image source={Tobey3} style={{ width: 200, height: 250 }} />
+        <Image source={Tobey3} style={{ width: 300, height: 375 }} />
 
         <Text>Status:</Text>
         <Picker
@@ -288,7 +288,7 @@ class Pagina04 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Image source={Andrew1} style={{ width: 200, height: 250 }} />
+        <Image source={Andrew1} style={{ width: 300, height: 375 }} />
 
         <Text>Status:</Text>
         <Picker
@@ -350,7 +350,7 @@ class Pagina05 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Image source={Andrew2} style={{ width: 200, height: 250 }} />
+        <Image source={Andrew2} style={{ width: 300, height: 375 }} />
 
         <Text>Status:</Text>
         <Picker
@@ -412,7 +412,7 @@ class Pagina06 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Image source={Tom1} style={{ width: 200, height: 250 }} />
+        <Image source={Tom1} style={{ width: 300, height: 375 }} />
 
         <Text>Status:</Text>
         <Picker
@@ -474,7 +474,7 @@ class Pagina07 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Image source={Tom2} style={{ width: 200, height: 250 }} />
+        <Image source={Tom2} style={{ width: 300, height: 375 }} />
 
         <Text>Status:</Text>
         <Picker
@@ -536,7 +536,7 @@ class Pagina08 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Image source={Tom3} style={{ width: 200, height: 250 }} />
+        <Image source={Tom3} style={{ width: 300, height: 375 }} />
 
         <Text>Status:</Text>
         <Picker
@@ -598,7 +598,7 @@ class Pagina09 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Image source={IntoSpiderverse} style={{ width: 200, height: 250 }} />
+        <Image source={IntoSpiderverse} style={{ width: 300, height: 375 }} />
 
         <Text>Status:</Text>
         <Picker
@@ -660,7 +660,7 @@ class Pagina10 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Image source={AcrossSpiderverse} style={{ width: 200, height: 250 }} />
+        <Image source={AcrossSpiderverse} style={{ width: 300, height: 375 }} />
 
         <Text>Status:</Text>
         <Picker
