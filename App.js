@@ -21,13 +21,13 @@ class Principal extends React.Component {
     return (
       <View>
         <View style={{ marginBottom: 10 }}>
-          <Button title="Homem-aranha" onPress={() => this.goToPagina01()} />
+          <Button title="Homem-Aranha" onPress={() => this.goToPagina01()} />
         </View>
         <View style={{ marginBottom: 10 }}>
-          <Button title="Homem-aranha 2" onPress={() => this.goToPagina02()} />
+          <Button title="Homem-Aranha 2" onPress={() => this.goToPagina02()} />
         </View>
         <View style={{ marginBottom: 10 }}>
-          <Button title="Homem-aranha 3" onPress={() => this.goToPagina03()} />
+          <Button title="Homem-Aranha 3" onPress={() => this.goToPagina03()} />
         </View>
         <View style={{ marginBottom: 10 }}>
           <Button title="O Espetacular Homem-Aranha" onPress={() => this.goToPagina04()} />
@@ -36,13 +36,13 @@ class Principal extends React.Component {
           <Button title="O Espetacular Homem-Aranha 2" onPress={() => this.goToPagina05()} />
         </View>
         <View style={{ marginBottom: 10 }}>
-          <Button title="Homem Aranha: De Volta ao Lar" onPress={() => this.goToPagina06()} />
+          <Button title="Homem-Aranha: De Volta ao Lar" onPress={() => this.goToPagina06()} />
         </View>
         <View style={{ marginBottom: 10 }}>
-          <Button title="Homem Aranha: Longe de Casa" onPress={() => this.goToPagina07()} />
+          <Button title="Homem-Aranha: Longe de Casa" onPress={() => this.goToPagina07()} />
         </View>
         <View style={{ marginBottom: 10 }}>
-          <Button title="Homem Aranha: Sem Volta Para Casa" onPress={() => this.goToPagina08()} />
+          <Button title="Homem-Aranha: Sem Volta Para Casa" onPress={() => this.goToPagina08()} />
         </View>
         <View style={{ marginBottom: 10 }}>
           <Button title="Homem-Aranha no Aranhaverso" onPress={() => this.goToPagina09()} />
@@ -54,47 +54,17 @@ class Principal extends React.Component {
     );
   }
 
-  goToPagina01() {
-    this.props.navigation.navigate("Pagina01");
-  }
-
-  goToPagina02() {
-    this.props.navigation.navigate("Pagina02");
-  }
-
-  goToPagina03() {
-    this.props.navigation.navigate("Pagina03");
-  }
-
-  goToPagina04() {
-    this.props.navigation.navigate("Pagina04");
-  }
-
-  goToPagina05() {
-    this.props.navigation.navigate("Pagina05");
-  }
-
-  goToPagina06() {
-    this.props.navigation.navigate("Pagina06");
-  }
-
-  goToPagina07() {
-    this.props.navigation.navigate("Pagina07");
-  }
-
-  goToPagina08() {
-    this.props.navigation.navigate("Pagina08");
-  }
-
-  goToPagina09() {
-    this.props.navigation.navigate("Pagina09");
-  }
-
-  goToPagina10() {
-    this.props.navigation.navigate("Pagina10");
-  }
+  goToPagina01() {this.props.navigation.navigate("Homem-Aranha");}
+  goToPagina02() {this.props.navigation.navigate("Homem-Aranha 2");}
+  goToPagina03() {this.props.navigation.navigate("Homem-Aranha 3");}
+  goToPagina04() {this.props.navigation.navigate("O Espetacular Homem-Aranha");}
+  goToPagina05() {this.props.navigation.navigate("O Espetacular Homem-Aranha 2");}
+  goToPagina06() {this.props.navigation.navigate("Homem-Aranha: De Volta ao Lar");}
+  goToPagina07() {this.props.navigation.navigate("Homem-Aranha: Longe de Casa");}
+  goToPagina08() {this.props.navigation.navigate("Homem-Aranha: Sem Volta Para Casa");}
+  goToPagina09() {this.props.navigation.navigate("Homem-Aranha no Aranhaverso");}
+  goToPagina10() {this.props.navigation.navigate("Homem-Aranha: Através do Aranhaverso");}
 }
-
 class Pagina01 extends React.Component {
   render() {
     return (
@@ -105,7 +75,6 @@ class Pagina01 extends React.Component {
     );
   }
 }
-
 class Pagina02 extends React.Component {
   render() {
     return (
@@ -116,7 +85,6 @@ class Pagina02 extends React.Component {
     );
   }
 }
-
 class Pagina03 extends React.Component {
   render() {
     return (
@@ -127,7 +95,6 @@ class Pagina03 extends React.Component {
     );
   }
 }
-
 class Pagina04 extends React.Component {
   render() {
     return (
@@ -138,7 +105,6 @@ class Pagina04 extends React.Component {
     );
   }
 }
-
 class Pagina05 extends React.Component {
   render() {
     return (
@@ -149,7 +115,6 @@ class Pagina05 extends React.Component {
     );
   }
 }
-
 class Pagina06 extends React.Component {
   render() {
     return (
@@ -160,7 +125,6 @@ class Pagina06 extends React.Component {
     );
   }
 }
-
 class Pagina07 extends React.Component {
   render() {
     return (
@@ -171,7 +135,6 @@ class Pagina07 extends React.Component {
     );
   }
 }
-
 class Pagina08 extends React.Component {
   render() {
     return (
@@ -182,7 +145,6 @@ class Pagina08 extends React.Component {
     );
   }
 }
-
 class Pagina09 extends React.Component {
   render() {
     return (
@@ -193,7 +155,6 @@ class Pagina09 extends React.Component {
     );
   }
 }
-
 class Pagina10 extends React.Component {
   render() {
     return (
@@ -211,16 +172,16 @@ class App extends React.Component {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={Principal} />
-          <Stack.Screen name="Pagina01" component={Pagina01} />
-          <Stack.Screen name="Pagina02" component={Pagina02} />
-          <Stack.Screen name="Pagina03" component={Pagina03} />
-          <Stack.Screen name="Pagina04" component={Pagina04} />
-          <Stack.Screen name="Pagina05" component={Pagina05} />
-          <Stack.Screen name="Pagina06" component={Pagina06} />
-          <Stack.Screen name="Pagina07" component={Pagina07} />
-          <Stack.Screen name="Pagina08" component={Pagina08} />
-          <Stack.Screen name="Pagina09" component={Pagina09} />
-          <Stack.Screen name="Pagina10" component={Pagina10} />
+          <Stack.Screen name="Homem-Aranha" component={Pagina01} />
+          <Stack.Screen name="Homem-Aranha 2" component={Pagina02} />
+          <Stack.Screen name="Homem-Aranha 3" component={Pagina03} />
+          <Stack.Screen name="O Espetacular Homem-Aranha" component={Pagina04} />
+          <Stack.Screen name="O Espetacular Homem-Aranha 2" component={Pagina05} />
+          <Stack.Screen name="Homem-Aranha: De Volta ao Lar" component={Pagina06} />
+          <Stack.Screen name="Homem-Aranha: Longe de Casa" component={Pagina07} />
+          <Stack.Screen name="Homem-Aranha: Sem Volta Para Casa" component={Pagina08} />
+          <Stack.Screen name="Homem-Aranha no Aranhaverso" component={Pagina09} />
+          <Stack.Screen name="Homem-Aranha: Através do Aranhaverso" component={Pagina10} />
         </Stack.Navigator>
       </NavigationContainer>
     );
