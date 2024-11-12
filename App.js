@@ -1,5 +1,6 @@
 import React from 'react';
-import { Text, View, Button, Image, Picker, TextInput } from 'react-native';
+import { Text, View, Button, Image, Vibration, TextInput } from 'react-native';
+import { Picker } from '@react-native-picker/picker';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import AsyncStorage from '@react-native-async-storage/async-storage'
@@ -95,6 +96,7 @@ class Pagina01 extends React.Component {
     } catch (error) {
       console.log('Erro ao salvar dados:', error);
     }
+    Vibration.vibrate(100);
   };
 
   render() {
@@ -156,6 +158,7 @@ class Pagina02 extends React.Component {
     } catch (error) {
       console.log('Erro ao salvar dados:', error);
     }
+    Vibration.vibrate(100);
   };
 
   render() {
@@ -217,6 +220,7 @@ class Pagina03 extends React.Component {
     } catch (error) {
       console.log('Erro ao salvar dados:', error);
     }
+    Vibration.vibrate(100);
   };
 
   render() {
@@ -278,6 +282,7 @@ class Pagina04 extends React.Component {
     } catch (error) {
       console.log('Erro ao salvar dados:', error);
     }
+    Vibration.vibrate(100);
   };
 
   render() {
@@ -339,6 +344,7 @@ class Pagina05 extends React.Component {
     } catch (error) {
       console.log('Erro ao salvar dados:', error);
     }
+    Vibration.vibrate(100);
   };
 
   render() {
@@ -400,6 +406,7 @@ class Pagina06 extends React.Component {
     } catch (error) {
       console.log('Erro ao salvar dados:', error);
     }
+    Vibration.vibrate(100);
   };
 
   render() {
@@ -461,6 +468,7 @@ class Pagina07 extends React.Component {
     } catch (error) {
       console.log('Erro ao salvar dados:', error);
     }
+    Vibration.vibrate(100);
   };
 
   render() {
@@ -522,6 +530,7 @@ class Pagina08 extends React.Component {
     } catch (error) {
       console.log('Erro ao salvar dados:', error);
     }
+    Vibration.vibrate(100);
   };
 
   render() {
@@ -583,6 +592,7 @@ class Pagina09 extends React.Component {
     } catch (error) {
       console.log('Erro ao salvar dados:', error);
     }
+    Vibration.vibrate(100);
   };
 
   render() {
@@ -644,6 +654,7 @@ class Pagina10 extends React.Component {
     } catch (error) {
       console.log('Erro ao salvar dados:', error);
     }
+    Vibration.vibrate(100);
   };
 
   render() {
